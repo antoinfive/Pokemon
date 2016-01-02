@@ -5,7 +5,8 @@
     <title>New Owner</title>
   </head>
   <body>
-    <h1>Fill out Form Below to Create yourself</h1>
+    <div style="text-align:center;">
+    <h1>Create an Owner</h1>
     <form action="/owner" method="post">
       <label for="owner_name">Owner Name</label>
       <br><input type="text" name="owner[name]" placeholder="name"></br>
@@ -14,5 +15,8 @@
       <br><input type="text" name="owner[avatar_url]" placeholder="image url"></br>
       <input type="submit" name="submit">
     </form>
+    <br></br>
+    <strong><a href="/">Home</a></strong>
+  </div>
   </body>
 </html>
