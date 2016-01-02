@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon</title>
+  </head>
+  <body>
+
+    <h3>Select any available Pokemon</h3>
+  <form action="/owner/<%= @owner.id %>" method="post">
+    <%Pocketmonster.all.each do |poke|%>
+      <% unless poke.owner %>
+      <br><input type="checkbox" name="owner[pocketmonster_ids][]" value="<%=poke.id%>"><%=poke.name%></input></br>
+    <%end%>
+    <%end%>
+    <input type="submit">
+  </form>
+    <h4>Update Current Owner by filling out the form below</h4>
+    <form action="/owner/<%= @owner.id %>" method="post">
+      <input type="text" name="owner[name]" placeholder="name">
+      <input type="text" name="owner[avatar_url]" placeholder="avatar_url">
+      <input type="submit">
+    </form>
+  </body>
+</html>

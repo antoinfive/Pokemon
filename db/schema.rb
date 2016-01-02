@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102171051) do
+ActiveRecord::Schema.define(version: 20160102202229) do
 
   create_table "owners", force: :cascade do |t|
     t.string "name"
     t.string "avatar_url"
+    t.string "pocketmonster_ids"
   end
 
   create_table "pocketmonsters", force: :cascade do |t|

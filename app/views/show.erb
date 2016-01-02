@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%=@owner.name%></title>
+  </head>
+  <body>
+<div style="text-align:center;">
+    <img src="http://i.imgur.com/3VDjtG3.png" alt="header"/>
+
+    <h2>Welcome to your PokeDash <%=@owner.name%></h2>
+      <% if @owner.pocketmonsters.empty? %>
+        <p>You have no Pokemon. Visit <a href="/owner/<%=@owner.id%>/edit">this</a> page to catch some Pokemon</p>
+      <%else%>
+      <%@owner.pocketmonsters.each do |poke|%>
+        <img src="<%=poke.image_url%>" alt="image_url"/>
+        <strong><p><%=poke.name%><form action="/pokemon/<%=poke.id %>/delete" method="post">
+        <input type="submit" name="delete" value="delete"></p></strong>
+      <%end%>
+      <%end%>
+      <br></br>
+      <h4>Click this button to Delete this Owner</h4>
+      <form class="" action="/owner/<%= @owner.id %>/delete" method="post">
+    <input type="submit" name="delete" value="Delete">
+
+
+    <br></br>
+    <strong><a href="/">Home</a></strong>
+    <strong><a href="/owner/<%=@owner.id%>/edit">Add Pokemon/Edit Owner</a></strong>
+  </div>
+  </body>
+
+</html>

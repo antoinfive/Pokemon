@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+  </head>
+  <body>
+    <div style="text-align:center;">
+    <h1>Select an Owner</h1>
+      <%@owners.each do |owner|%>
+        <br><a href="/owner/<%=owner.id%>"><%=owner.name%></a></br>
+      <%end%>
+      <br></br>
+      <strong><a href="/">Home</a></strong>
+    </div>
+  </body>
+</html>
